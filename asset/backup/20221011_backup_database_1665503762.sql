@@ -1,0 +1,191 @@
+DROP TABLE pembelian;
+
+CREATE TABLE `pembelian` (
+  `id_bl` int(10) NOT NULL,
+  `faktur` varchar(200) DEFAULT NULL,
+  `tgl_bl` date DEFAULT NULL,
+  `supp_id` int(10) DEFAULT NULL,
+  `item_bl` int(5) DEFAULT NULL,
+  `total_bl` int(10) DEFAULT NULL,
+  `disk_bl` varchar(50) DEFAULT NULL,
+  `byr_bl` int(10) DEFAULT NULL,
+  `user_id` int(10) DEFAULT '0',
+  `wkt_bl` datetime NOT NULL,
+  PRIMARY KEY (`id_bl`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO pembelian VALUES
+("168830397","A-006","2022-10-11","209531207","3","316900","10","285210","703095392","2022-10-11 23:45:21"),
+("633746824","A-006","2022-10-11","237282201","3","48000","5","45600","703095392","2022-10-11 13:38:22");
+
+
+DROP TABLE pembelian_detail;
+
+CREATE TABLE `pembelian_detail` (
+  `id_bdet` int(11) NOT NULL AUTO_INCREMENT,
+  `beli_id` int(10) NOT NULL,
+  `prd_id` int(10) NOT NULL,
+  `jml_bdet` int(5) NOT NULL,
+  PRIMARY KEY (`id_bdet`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO pembelian_detail VALUES
+("32","456691463","248971002","100"),
+("40","456691463","390134448","40"),
+("47","633746824","342112116","12"),
+("48","633746824","734162829","10"),
+("49","633746824","716350914","100"),
+("52","168830397","549776380","24"),
+("53","168830397","903191879","20"),
+("54","168830397","882726342","30");
+
+
+DROP TABLE pengeluaran;
+
+CREATE TABLE `pengeluaran` (
+  `id_lr` int(10) NOT NULL,
+  `tgl_lr` date NOT NULL,
+  `jns_lr` varchar(150) NOT NULL,
+  `nmnl_lr` int(10) NOT NULL,
+  `wkt_lr` datetime NOT NULL,
+  PRIMARY KEY (`id_lr`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO pengeluaran VALUES
+("418826627","2020-03-31","BELI PLASTIK KECIL","7500","2020-03-31 21:13:32"),
+("720060212","2020-03-18","BELI ATK ADMIN","8000","2020-03-21 23:29:39"),
+("736157637","2020-03-30","BELI PLASTIK KLIP KECIL","15000","2020-03-30 22:45:31"),
+("768586356","2022-09-01","BELI BANNER APOTEK","75000","2022-10-10 13:59:33");
+
+
+DROP TABLE penjualan;
+
+CREATE TABLE `penjualan` (
+  `id_jl` int(10) NOT NULL,
+  `tgl_jl` date DEFAULT NULL,
+  `nama_customer` varchar(100) DEFAULT NULL,
+  `item_jl` int(5) DEFAULT NULL,
+  `total_jl` int(10) DEFAULT NULL,
+  `disk_jl` int(3) DEFAULT NULL,
+  `byr_jl` int(10) DEFAULT NULL,
+  `user_id` int(10) DEFAULT '0',
+  `wkt_jl` datetime NOT NULL,
+  PRIMARY KEY (`id_jl`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO penjualan VALUES
+("504854209","2022-10-11","UMUM","1","12500","0","12500","904345146","2022-10-11 16:46:35"),
+("618439782","2022-10-11","RIZKA","3","13000","0","13000","904345146","2022-10-11 20:39:04"),
+("655053350","2022-10-11","DOKTER","1","19000","10","17100","904345146","2022-10-11 21:51:30"),
+("926119054","2022-10-11","UMUM","3","22500","0","22500","904345146","2022-10-11 20:38:37");
+
+
+DROP TABLE penjualan_detail;
+
+CREATE TABLE `penjualan_detail` (
+  `id_jdet` int(11) NOT NULL AUTO_INCREMENT,
+  `jual_id` int(10) NOT NULL,
+  `prd_id` int(10) NOT NULL,
+  `jml_jdet` int(5) NOT NULL,
+  PRIMARY KEY (`id_jdet`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO penjualan_detail VALUES
+("8","504854209","602057917","5"),
+("9","926119054","854868495","10"),
+("10","926119054","248971002","10"),
+("11","926119054","734162829","10"),
+("14","618439782","602057917","2"),
+("15","618439782","390134448","10"),
+("16","618439782","716350914","10"),
+("17","655053350","734162829","19");
+
+
+DROP TABLE produk;
+
+CREATE TABLE `produk` (
+  `id_prd` int(10) NOT NULL,
+  `nama_prd` varchar(200) NOT NULL,
+  `stn_id` int(10) NOT NULL,
+  `beli_prd` int(10) NOT NULL,
+  `jual_prd` int(10) NOT NULL,
+  `stok_prd` int(5) NOT NULL,
+  `wkt_prd` datetime NOT NULL,
+  PRIMARY KEY (`id_prd`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO produk VALUES
+("248971002","AMOXYCILLIN 500 MG TAB @10","123456789","500","750","90","2020-03-24 00:23:11"),
+("342112116","AMPICILLIN 500MG @10TAB","123456789","500","750","112","2020-03-22 13:15:17"),
+("390134448","PARACETAMOL TAB @10 500MG","123456789","150","300","80","2020-03-24 00:14:39"),
+("549776380","BODREX FLU BATUK BIRU TAB @4 ","398907743","2350","2500","24","2020-04-01 19:13:46"),
+("602057917","BODREX FLU BATUK HIJAU @4TAB","398907743","2350","2500","68","2020-03-24 21:09:49"),
+("716350914","IBUPROFEN TAB 500MG @10","123456789","350","500","110","2020-03-26 04:42:02"),
+("734162829","CEFADROXYL 500MG @10TAB","123456789","700","1000","80","2020-03-26 04:42:43"),
+("854868495","ASAM MEFENAMAT 500MG @10 TAB","123456789","350","500","420","2020-03-24 19:51:04"),
+("882726342","MYLANTA TABLET @10TAB","398907743","6350","9000","30","2022-10-11 23:45:07"),
+("903191879","PROMAAG TAB@10","398907743","3500","6000","20","2022-10-11 11:13:40");
+
+
+DROP TABLE satuan;
+
+CREATE TABLE `satuan` (
+  `id_stn` int(10) NOT NULL,
+  `nama_stn` varchar(50) NOT NULL,
+  `wkt_stn` datetime NOT NULL,
+  PRIMARY KEY (`id_stn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO satuan VALUES
+("123456789","TABLET","2020-03-21 16:40:14"),
+("190329765","AMPUL","2020-04-02 12:22:09"),
+("190386203","PCS","2022-10-09 09:20:56"),
+("398907743","STRIP","2020-03-21 17:37:50"),
+("612432497","BOX","2022-10-09 14:20:39"),
+("740540712","BOTOL","2022-05-30 11:07:13"),
+("877843914","KOTAK","2020-03-27 20:44:32");
+
+
+DROP TABLE supplier;
+
+CREATE TABLE `supplier` (
+  `id_supp` int(10) NOT NULL,
+  `nama_supp` varchar(150) NOT NULL,
+  `almt_supp` text NOT NULL,
+  `kntk_supp` varchar(15) NOT NULL,
+  `wkt_supp` datetime NOT NULL,
+  PRIMARY KEY (`id_supp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO supplier VALUES
+("209531207","PT. RAJAWALI MULIA PRATAMA","Jl. Jendral Sudirman No. 67 Barito Kuala","083140617623","2022-10-11 11:25:09"),
+("237282201","PT. KIMIA FARMA ","jalan damanhuri samarinda ","085246805241","2020-03-26 04:41:08"),
+("778393905","PT. BINA SAN PRIMA","jalan basuki rahmat, air hitam","085246805241","2020-03-24 23:48:18");
+
+
+DROP TABLE user;
+
+CREATE TABLE `user` (
+  `id_usr` int(10) NOT NULL,
+  `nama_usr` varchar(150) NOT NULL,
+  `user_usr` varchar(50) NOT NULL,
+  `pass_usr` varchar(150) NOT NULL,
+  `lvl_usr` int(2) NOT NULL,
+  `wkt_usr` datetime NOT NULL,
+  PRIMARY KEY (`id_usr`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO user VALUES
+("703095392","ADMINISTRATOR WEBSITE","admin","21232f297a57a5a743894a0e4a801fc3","1","2020-03-21 23:02:31"),
+("904345146","OPERATOR","operator","e10adc3949ba59abbe56e057f20f883e","2","2022-05-30 11:07:57");
+
+

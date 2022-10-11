@@ -57,14 +57,14 @@
                     $awal = date('Y-m-d', strtotime("+1 day", strtotime($awal)));
 
                     // jumlah total penjualan
-                    $query_jl = "SELECT SUM(total_jl) AS total_penjualan FROM penjualan WHERE tgl_jl LIKE '$tanggal'";
+                    $query_jl = "SELECT SUM(byr_jl) AS total_penjualan FROM penjualan WHERE tgl_jl LIKE '$tanggal'";
                     $sql_jl = mysqli_query($conn, $query_jl) or die(mysqli_error($conn));
                     $data_jl = mysqli_fetch_assoc($sql_jl);
                     $total_penjualan = $data_jl['total_penjualan'];
                     $grand_penjualan += $total_penjualan;
 
                     // jumlah total pembelian
-                    $query_bl = "SELECT SUM(total_bl) AS total_pembelian FROM pembelian WHERE tgl_bl LIKE '$tanggal'";
+                    $query_bl = "SELECT SUM(byr_bl) AS total_pembelian FROM pembelian WHERE tgl_bl LIKE '$tanggal'";
                     $sql_bl = mysqli_query($conn, $query_bl) or die(mysqli_error($conn));
                     $data_bl = mysqli_fetch_assoc($sql_bl);
                     $total_pembelian = $data_bl['total_pembelian'];
