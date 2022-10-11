@@ -21,9 +21,16 @@ if ($_SESSION['status'] != 'LOGIN') {
    <!-- Bootstrap core CSS -->
    <link href="./asset/css/style.css" rel="stylesheet">
    <!-- fontawesome core CSS -->
-   <link href="asset/fontawesome-free-5.11.2/css/all.min.css" rel="stylesheet">
+   <link href="./asset/css/fontawesome-free-5.11.2/css/all.min.css" rel="stylesheet">
    <!-- datatables core CSS -->
    <link href="./asset/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+
+   <?php if ($_GET['view'] == 'pembelian-detail' or $_GET['view'] == 'penjualan-detail') : ?>
+      <!-- Select2 -->
+      <link href="./asset/css/select2.min.css" rel="stylesheet" />
+      <link href="./asset/css/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+   <?php endif; ?>
+
 </head>
 
 <body class="bg-light">
@@ -98,6 +105,8 @@ if ($_SESSION['status'] != 'LOGIN') {
 
    <?php if ($_GET['view'] == 'pembelian-detail' or $_GET['view'] == 'penjualan-detail') : ?>
       <script src="./asset/js/discount.js"></script>
+      <script src="./asset/js/select2.full.min.js"></script>
+      <script src="./asset/js/select2-produk.js"></script>
    <?php endif; ?>
 
    <?php if (isset($ajaxDataTable)) : ?>

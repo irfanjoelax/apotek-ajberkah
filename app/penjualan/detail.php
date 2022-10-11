@@ -23,18 +23,7 @@ $data  = mysqli_fetch_array($sql);
                         <div class="input-group-text">
                             Barang/Produk
                         </div>
-                        <select class="form-select" id="id_produk" name="id_produk" required>
-                            <option value="" selected>-- Silakan Pilih Barang/Produk --</option>
-                            <?php
-                            $query   = "SELECT * FROM produk ORDER BY wkt_prd DESC";
-                            $sql     = mysqli_query($conn, $query) or die(mysqli_error($conn));
-                            while ($produk  = mysqli_fetch_array($sql)) :
-                            ?>
-                                <option value="<?= $produk['id_prd'] ?>">
-                                    <?= $produk['nama_prd'] ?>
-                                </option>
-                            <?php endwhile; ?>
-                        </select>
+                        <select class="form-select select2-produk" id="id_produk" name="id_produk" required></select>
                     </div>
                 </div>
                 <div class="col-12">

@@ -20,7 +20,7 @@ if ($cek < 1) {
                     jml_bdet = $jml_bdet
                ";
 } else {
-    $query2   = "UPDATE pembelian_detail SET jml_bdet=$jml_bdet WHERE beli_id=$id_beli AND prd_id=$id_prd";
+    echo alert('Barang/Produk telah ditambahkan!', $url);
 }
 
 query($conn, $query2);

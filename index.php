@@ -15,7 +15,7 @@
    <link href="./asset/css/style.css" rel="stylesheet">
 
    <!-- fontawesome core CSS -->
-   <link href="./asset/fontawesome-free-5.11.2/css/all.min.css" rel="stylesheet">
+   <link href="./asset/css/fontawesome-free-5.11.2/css/all.min.css" rel="stylesheet">
 
    <!-- Custom styles for this template -->
    <link href="./asset/css/login.css" rel="stylesheet">
