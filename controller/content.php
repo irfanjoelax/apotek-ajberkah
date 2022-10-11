@@ -68,5 +68,5 @@ elseif ($view == "penjualan-detail-hapus") include("app/penjualan-detail/hapus.p
 elseif ($view == "laporan") include("app/laporan/index.php");
 elseif ($view == "laporan-periode") include("app/laporan_periode.php");
 
-// // views data backup dan restor
-// elseif ($view == "backup") include("app/backup.php");
+// Content DATA BACKUP
+elseif ($view == "backup") include("app/backup.php");

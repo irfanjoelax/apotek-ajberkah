@@ -13,5 +13,4 @@ Aplikasi POS yang digunakan oleh APOTEK AJ Berkah Kota Samarinda
 - Chart JS
 
 ### Developer
-
 Dibuat dan dikembangkan oleh [Muhammad Irfan Permana, S.Kom.](https://wa.me/+6283140617623).

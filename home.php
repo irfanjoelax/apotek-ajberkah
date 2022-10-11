@@ -75,6 +75,12 @@ if ($_SESSION['status'] != 'LOGIN') {
                         <i class="fa-solid fa-fire-flame-curved"></i>
                         <span class="ms-1">Profile</span>
                      </a>
+                     <?php if ($_SESSION['level'] == 1) : ?>
+                        <a class="dropdown-item" href="?view=backup" onclick="return confirm(`Apakah yakin ingin melakukan backup database?`)">
+                           <i class="fa-solid fa-fire-flame-curved"></i>
+                           <span class="ms-1">Backup Database</span>
+                        </a>
+                     <?php endif; ?>
                      <hr class="dropdown-divider">
                      <a class="dropdown-item text-danger" href="?view=logout" onclick="return confirm(`Apakah yakin ingin keluar dari aplikasi ini ?`);">
                         <i class="fa-solid fa-right-from-bracket"></i>
