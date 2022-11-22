@@ -9,12 +9,19 @@ $no      = 1;
 while ($list = mysqli_fetch_array($sql)) {
    $row    = array();
 
-   $row[]  = '<span class="text-start">' . $no++ . '</span>';
-   $row[]  = '<span class="text-start">' . $list['nama_prd'] . '</span>';
+   $row[]  = '<span class="text-center">' . $no++ . '</span>';
+   $row[]  = '<span class="text-start">' . $list['nama_prd'] . '</span> <br> 
+               <small style="font-size:11px">' . tanggal($list['tgl_ed']) . '</small>';
    $row[]  = '<span class="text-start">' . $list['nama_stn'] . '</span>';
    $row[]  = 'Rp. <span class="float-end">' . rupiah($list['beli_prd']) . '</span>';
    $row[]  = 'Rp. <span class="float-end">' . rupiah($list['jual_prd']) . '</span>';
-   $row[]  = '<span class="float-end">' . number_format($list['stok_prd']) . '</span>';
+
+   if ($list['stok_prd'] <= 10) {
+      $row[]  = '<span class="float-end fw-bold text-danger">' . number_format($list['stok_prd']) . '</span>';
+   } else {
+      $row[]  = '<span class="float-end">' . number_format($list['stok_prd']) . '</span>';
+   }
+
    $row[]  = '
             <div class="text-center">
                <div class="btn-group btn-group-sm">

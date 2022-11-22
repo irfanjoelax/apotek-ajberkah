@@ -16,11 +16,10 @@
                     <thead class="bg-primary text-white">
                         <tr>
                             <th class="text-center" width="5%">No. </th>
-                            <th class="text-center" width="18%">Tanggal</th>
-                            <th class="text-center" width="27%">Supplier</th>
+                            <th class="text-center" width="30%">Supplier</th>
+                            <th class="text-center" width="20%">No. Faktur</th>
+                            <th class="text-center" width="15%">Jatuh Tempo</th>
                             <th class="text-center" width="5%">Item</th>
-                            <th class="text-center" width="13%">Total</th>
-                            <th class="text-center" width="7%">Disk</th>
                             <th class="text-center" width="15%">Grand Total</th>
                             <th class="text-center" width="10%">Aksi</th>
                         </tr>

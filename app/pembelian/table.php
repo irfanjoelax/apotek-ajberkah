@@ -10,11 +10,10 @@ while ($list = mysqli_fetch_array($sql)) {
    $row    = array();
 
    $row[]  = '<p class="text-center my-0">' . $no++ . '</p>';
-   $row[]  = '<p class="text-center my-0">' . tanggal($list['tgl_bl']) . '</p>';
    $row[]  = '<p class="text-center my-0">' . $list['nama_supp'] . '</p>';
+   $row[]  = '<p class="text-center my-0">' . $list['faktur'] . '</p>';
+   $row[]  = '<p class="text-center my-0">' . tanggal($list['jth_tempo']) . '</p>';
    $row[]  = '<p class="text-center my-0">' . number_format($list['item_bl']) . '</p>';
-   $row[]  = 'Rp. <span class="float-end">' . rupiah($list['total_bl']) . '</span>';
-   $row[]  = '<span class="float-end">' . $list['disk_bl'] . ' %</>';
    $row[]  = 'Rp. <span class="float-end">' . rupiah($list['byr_bl']) . '</span>';
    $row[]  = '
          <div class="text-center">

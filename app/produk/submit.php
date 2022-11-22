@@ -7,6 +7,7 @@ $beli_prd = $_POST['beli_prd'];
 $jual_prd = $_POST['jual_prd'];
 $stok_prd = $_POST['stok_prd'];
 $wkt_prd  = date('Y-m-d H:i:s');
+$tgl_ed   = $_POST['tgl_ed'];
 
 if (isset($_GET['id'])) {
     $id_prd = $_GET['id'];
@@ -16,7 +17,8 @@ if (isset($_GET['id'])) {
                     stn_id   = '$stn_id',
                     beli_prd = '$beli_prd',
                     jual_prd = '$jual_prd',
-                    stok_prd = '$stok_prd'
+                    stok_prd = '$stok_prd',
+                    tgl_ed   = '$tgl_ed'
                 WHERE id_prd = '$id_prd'";
 } else {
     $query   = "INSERT INTO produk SET 
@@ -26,6 +28,7 @@ if (isset($_GET['id'])) {
                     beli_prd = '$beli_prd',
                     jual_prd = '$jual_prd',
                     stok_prd = '$stok_prd',
+                    tgl_ed   = '$tgl_ed',
                     wkt_prd  = '$wkt_prd'
                 ";
 }

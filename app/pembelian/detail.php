@@ -128,6 +128,10 @@ function isSelected($key, $value)
                             <label class="form-label">No. Faktur</label>
                             <input type="text" class="form-control" name="faktur" value="<?= ($status == 'ubah') ? $data['faktur'] : '' ?>" required>
                         </div>
+                        <div class="col-12">
+                            <label class="form-label">Jatuh Tempo</label>
+                            <input type="date" class="form-control" name="jth_tempo" value="<?= ($status == 'ubah') ? $data['jth_tempo'] : '' ?>" required>
+                        </div>
                         <div class="col-md-4">
                             <label for="item">Item</label>
                             <input type="text" class="form-control" name="item" id="item" value="<?= $item ?>" readonly>
